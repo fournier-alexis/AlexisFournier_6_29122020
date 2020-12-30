@@ -10,7 +10,7 @@ export default class DaoMedia{
     loadMedia(data){
         data.then(res =>{
             res["media"].forEach(m => {
-                Media.listMedia.push(new Media(m.id, m.photographerID, m.image, m.tags, m.likes));
+                Media.listMedia.push(new Media(m.id, m.photographerID, m.image, m.tags, m.likes, m.description));
             });
         });
     }
