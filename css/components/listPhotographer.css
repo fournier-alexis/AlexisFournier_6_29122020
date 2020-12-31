@@ -1,0 +1,24 @@
+:root {
+    --secondary_text_h2: #D3573C;
+    --secondary_text_p: #901C1C;
+    --color_black: #000000;
+    --color_white: #FFFFFF;
+    --color_grey: #757575;
+    --color_lightgrey: #C4C4C4;
+}
+
+@font-face {
+    font-family: "DMSans";
+    src: url("../../src/fonts/DmSans-Regular.ttf") format("ttf");
+}
+
+.listPhotographer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.listPhotographer .lignePhotographer{
+    display: flex;
+    justify-content: space-around;
+}
