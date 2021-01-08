@@ -1,0 +1,20 @@
+.tag{
+    height: 21px;
+    background-color: var(--color_white);
+    border: 0.5px solid var(--color_lightgrey);
+    box-sizing: border-box;
+    border-radius: 11px;
+    margin: 0 2px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--secondary_text_p);
+    outline: none;
+    transition: all 500ms;
+}
+
+.tag:hover{
+    cursor: pointer;
+    color: var(--color_white);
+    background-color: var(--secondary_text_p);
+}
