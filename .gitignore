@@ -108,3 +108,4 @@ package-lock.json
 package.json
 scss/
 css/style.css.map
+webpack.config.js
