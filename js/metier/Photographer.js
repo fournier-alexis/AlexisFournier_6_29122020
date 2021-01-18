@@ -1,5 +1,4 @@
 export default class Photographer{
-    static listPhotographer = [];
     constructor(name, id, city, country, tags, tagline, price, portrait) {
         this.name = name;
         this.id = id;

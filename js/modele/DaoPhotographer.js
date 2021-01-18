@@ -1,4 +1,5 @@
 import Photographer from "../metier/Photographer.js";
+import Controller from "../controllers/Controller.js";
 
 export default class DaoPhotographer {
     constructor() {
@@ -10,9 +11,10 @@ export default class DaoPhotographer {
 
     loadPhotographes(data) {
         data.forEach(p => {
-            Photographer.listPhotographer.push(
+            Controller.listPhotographer.push(
                 new Photographer(p.name, p.id, p.city, p.country, p.tags, p.tagline, p.price, p.portrait)
             );
+            Controller.addTags(p.tags);
         });
     }
 }

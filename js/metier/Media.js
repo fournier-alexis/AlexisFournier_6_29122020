@@ -1,5 +1,4 @@
 export default class Media{
-    static listMedia = [];
     constructor(id, photographerID, image, tags, likes, description) {
         this.id = id;
         this.photographerID = photographerID;

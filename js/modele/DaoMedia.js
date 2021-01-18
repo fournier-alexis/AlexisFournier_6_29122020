@@ -1,4 +1,5 @@
 import Media from "../metier/Media.js";
+import Controller from "../controllers/Controller.js";
 
 export default class DaoMedia {
     constructor() {
@@ -10,7 +11,7 @@ export default class DaoMedia {
 
     loadMedia(data) {
         data.forEach(m => {
-            Media.listMedia.push(new Media(m.id, m.photographerID, m.image, m.tags, m.likes, m.description));
+            Controller.listMedia.push(new Media(m.id, m.photographerID, m.image, m.tags, m.likes, m.description));
         });
     }
 }

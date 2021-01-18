@@ -5,7 +5,7 @@ export default class ListPhotographers{
         this._photographers = photographers;
     }
 
-    createElement(){
+    createElement(filtre){
         const nbPhotographers = this._photographers.length;
         const listPhotographer = document.createElement("div");
         const ligneElement = document.createElement("div");
@@ -17,18 +17,19 @@ export default class ListPhotographers{
             lignePhotographer.push(ligneElement.cloneNode());
         }
         this._photographers.forEach(value => {
-            if (j === 3){
-                j = 0;
-                compteur ++;
+            if (!filtre || value.tags.includes(filtre)){
+                if (j === 3){
+                    j = 0;
+                    compteur ++;
+                }
+                lignePhotographer[compteur].appendChild(new ThumbPhotographer(value).createElement());
+                j++;
             }
-            lignePhotographer[compteur].appendChild(new ThumbPhotographer(value).createElement());
-            j++;
         });
         lignePhotographer.forEach(value => {
             listPhotographer.appendChild(value);
         })
         listPhotographer.className = "listPhotographer";
-        console.log(nbPhotographers/3);
         listPhotographer.style.height = (nbPhotographers / 3) * 400 + "px";
         return listPhotographer;
     }
