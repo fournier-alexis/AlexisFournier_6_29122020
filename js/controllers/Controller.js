@@ -1,9 +1,7 @@
 import Tag from "../metier/Tag";
 
 export default class Controller{
-    static listMedia = [];
     static listTag = [];
-    static listPhotographer = [];
 
     static addTags(tags) {
         tags.forEach(tag => {
@@ -23,5 +21,25 @@ export default class Controller{
             }
         });
         return found;
+    }
+
+    static getPhotographerByName(name) {
+        let photographer = null;
+        JSON.parse(sessionStorage.getItem("listPhotographer")).forEach(p => {
+            if (p.name === name) {
+                photographer = p;
+            }
+        })
+        return photographer;
+    }
+
+    static getMediaByPhotographerId(id){
+        let medias = [];
+        JSON.parse(sessionStorage.getItem("listMedia")).forEach(m => {
+            if (m.photographerId === id) {
+                medias.push(m);
+            }
+        })
+        return medias;
     }
 }

@@ -1,8 +1,9 @@
 export default class Media{
-    constructor(id, photographerID, image, tags, likes, description) {
+    constructor(id, photographerId, image, video, tags, likes, description) {
         this.id = id;
-        this.photographerID = photographerID;
+        this.photographerId = photographerId;
         this.image = image;
+        this.video = video;
         this.tags = tags;
         this.likes = likes;
         this.description = description;

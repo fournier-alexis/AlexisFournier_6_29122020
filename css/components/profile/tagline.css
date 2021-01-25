@@ -1,0 +1,6 @@
+.tagline {
+    font-family: "DMSans", sans-serif;
+    font-size: 10px;
+    line-height: 13px;
+    color : var(--color_black);
+}

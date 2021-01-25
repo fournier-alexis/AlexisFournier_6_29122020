@@ -1,4 +1,4 @@
-import HTMLTag from "./Tag.js"
+import HTMLTag from "./profile/Tag.js"
 import Controller from "../controllers/Controller";
 
 export default class Filter {

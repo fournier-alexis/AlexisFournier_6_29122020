@@ -1,10 +1,10 @@
-.listPhotographer{
+.listMedias{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.listPhotographer .lignePhotographer{
+.listMedias .ligneMedias{
     display: flex;
     justify-content: space-around;
 }

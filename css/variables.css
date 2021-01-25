@@ -1,0 +1,15 @@
+:root {
+    --secondary_text_h2: #D3573C;
+    --secondary_text_p: #901C1C;
+    --color_black: #000000;
+    --color_white: #FFFFFF;
+    --color_grey: #757575;
+    --color_grey2: #525252;
+    --color_lightgrey: #C4C4C4;
+    --color_lightgrey2: #FAFAFA;
+}
+
+@font-face {
+    font-family: "DMSans";
+    src: url("https://fonts.googleapis.com/css2?family=DM+Sans") format("ttf");
+}

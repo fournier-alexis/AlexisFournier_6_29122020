@@ -1,0 +1,6 @@
+.location{
+    font-family: "DMSans", sans-serif;
+    font-size: 13px;
+    line-height: 17px;
+    color : var(--secondary_text_p);
+}

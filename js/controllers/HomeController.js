@@ -1,5 +1,6 @@
 import ListPhotographers from "../components/ListPhotographers";
 import Controller from "./Controller";
+import PhotographerController from "./PhotographerController";
 
 export default class HomeController{
     constructor() {
@@ -11,6 +12,9 @@ export default class HomeController{
         document.getElementById("up").addEventListener("click", this.toTheTop);
         document.querySelectorAll(".tag").forEach((tag) => {
             tag.addEventListener("click", this.selectTag);
+        });
+        document.querySelectorAll(".thumbPhotographer").forEach((photographer) => {
+            photographer.addEventListener("click", (evt)=>{this.selectPhotographer(evt, photographer)});
         });
     }
 
@@ -28,7 +32,13 @@ export default class HomeController{
     selectTag(evt){
         const tag = (evt.target.firstChild.data).substring(1);
         document.getElementById("main").innerHTML = "";
-        document.getElementById("main").appendChild(new ListPhotographers(Controller.listPhotographer).createElement(tag));
+        document.getElementById("main").appendChild(new ListPhotographers( JSON.parse(sessionStorage.getItem("listPhotographer"))).createElement(tag));
+        new HomeController();
+    }
+
+    selectPhotographer(evt, photographer){
+        window.location.href = "./html/photographer-page.html";
+        sessionStorage.setItem("photographerNameSelected", photographer.dataset.name);
     }
 }
 
@@ -36,9 +46,11 @@ export default class HomeController{
  * Control display of up button
  */
 window.onscroll = function() {
-    if (window.pageYOffset < 80) {
-        document.getElementById("up").style.transform = "scale(0)";
-    } else {
-        document.getElementById("up").style.transform = "scale(1)";
+    if (document.title === "Fisheye"){
+        if (window.pageYOffset < 80) {
+            document.getElementById("up").style.transform = "scale(0)";
+        } else {
+            document.getElementById("up").style.transform = "scale(1)";
+        }
     }
 }

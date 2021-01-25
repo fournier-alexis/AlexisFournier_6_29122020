@@ -1,4 +1,5 @@
 import ThumbPhotographer from "./ThumbPhotographer.js";
+import "./../../css/components/listPhotographer.css";
 
 export default class ListPhotographers{
     constructor(photographers){
@@ -7,8 +8,8 @@ export default class ListPhotographers{
 
     createElement(filtre){
         const nbPhotographers = this._photographers.length;
-        const listPhotographer = document.createElement("div");
-        const ligneElement = document.createElement("div");
+        const listPhotographer = document.createElement("photographers");
+        const ligneElement = document.createElement("photographers");
         ligneElement.className = "lignePhotographer";
         const lignePhotographer = [];
         let compteur = 0;
