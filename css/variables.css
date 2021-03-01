@@ -1,4 +1,6 @@
 :root {
+    --primary-light: #DB8876;
+    --primary-text: #312E2E;
     --secondary_text_h2: #D3573C;
     --secondary_text_p: #901C1C;
     --color_black: #000000;
@@ -7,6 +9,7 @@
     --color_grey2: #525252;
     --color_lightgrey: #C4C4C4;
     --color_lightgrey2: #FAFAFA;
+    --color_error: #B70000;
 }
 
 @font-face {

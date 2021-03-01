@@ -5,6 +5,11 @@
   font-family: "DMSans";
   src: url("https://fonts.googleapis.com/css2?family=DM+Sans") format("ttf");
 }
+
+*:focus {
+  outline: thick double var(--primary-light);
+}
+
 body {
   margin: 0;
 }
@@ -16,9 +21,8 @@ body #up {
   margin-left: 43%;
   font-weight: 700;
   font-size: 1.1em;
-  background-color: #DB8876;
+  background-color: var(--primary-light);
   border: none;
-  outline: none;
   border-radius: 5px;
   transform: scale(0);
   transition: transform 500ms ease;
@@ -34,14 +38,16 @@ body header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-left: 7rem;
+  margin-left: 6rem;
 }
 body header img {
-  width: 25%;
+  width: 30%;
 }
+
 body header img:hover {
   cursor: pointer;
 }
+
 body main h1 {
   position: relative;
   left: 73%;
@@ -49,8 +55,40 @@ body main h1 {
   font-size: 2.25em;
   font-family: "Dmsans", sans-serif;
   font-weight: normal;
-  color: #901C1C;
+  color: var(--secondary_text_p);
   margin-block: 0;
 }
 
-/*# sourceMappingURL=style.css.map */
+@media (max-width: 992px) {
+  body header{
+    width: 80%;
+    display: block;
+  }
+
+  body header nav{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+  }
+
+  body main h1{
+    left: 60%;
+    top: 0.5em;
+    font-size: 1.7em;
+    margin-bottom: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  body header{
+    margin-left: 3em;
+  }
+  body header img{
+    width: 60%;
+  }
+  body main h1{
+    top: 1.5em;
+    font-size: 1em;
+    margin-bottom: 7em;
+  }
+}
