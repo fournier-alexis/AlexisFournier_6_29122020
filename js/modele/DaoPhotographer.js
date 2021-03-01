@@ -1,7 +1,12 @@
 import Photographer from "../metier/Photographer.js";
 import Controller from "../controllers/Controller.js";
 
+/**Class data access object photographer */
 export default class DaoPhotographer {
+    /**
+     * Singleton to create or get DaoPhotographer
+     * @returns {DaoPhotographer}
+     */
     constructor() {
         if (DaoPhotographer._instance) {
             return DaoPhotographer._instance;
@@ -9,6 +14,10 @@ export default class DaoPhotographer {
         DaoPhotographer._instance = this;
     }
 
+    /**
+     * Load all photographers and save them in sessionStorage
+     * @param data {Object}
+     */
     loadPhotographes(data) {
         const listPhotographer = [];
         data.forEach(p => {
