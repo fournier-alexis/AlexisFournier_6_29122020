@@ -1,3 +1,94 @@
+/*Imports ------------------------------------------------------------------------------------------------------------*/
+/*Couleurs : */
+/*Polices*/
+@font-face {
+  font-family: "DMSans";
+  src: url("https://fonts.googleapis.com/css2?family=DM+Sans") format("ttf");
+}
 
+*:focus {
+  outline: thick double var(--primary-light);
+}
 
-/*# sourceMappingURL=style.css.map */
+body {
+  margin: 0;
+}
+body #up {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 1rem;
+  z-index: 1;
+  margin-left: 43%;
+  font-weight: 700;
+  font-size: 1.1em;
+  background-color: var(--primary-light);
+  border: none;
+  border-radius: 5px;
+  transform: scale(0);
+  transition: transform 500ms ease;
+}
+body #up:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+body header {
+  position: absolute;
+  top: 2rem;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 6rem;
+}
+body header img {
+  width: 30%;
+}
+
+body header img:hover {
+  cursor: pointer;
+}
+
+body main h1 {
+  position: relative;
+  left: 73%;
+  width: fit-content;
+  font-size: 2.25em;
+  font-family: "Dmsans", sans-serif;
+  font-weight: normal;
+  color: var(--secondary_text_p);
+  margin-block: 0;
+}
+
+@media (max-width: 992px) {
+  body header{
+    width: 80%;
+    display: block;
+  }
+
+  body header nav{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+  }
+
+  body main h1{
+    left: 60%;
+    top: 0.5em;
+    font-size: 1.7em;
+    margin-bottom: 3em;
+  }
+}
+
+@media (max-width: 768px) {
+  body header{
+    margin-left: 3em;
+  }
+  body header img{
+    width: 60%;
+  }
+  body main h1{
+    top: 1.5em;
+    font-size: 1em;
+    margin-bottom: 7em;
+  }
+}

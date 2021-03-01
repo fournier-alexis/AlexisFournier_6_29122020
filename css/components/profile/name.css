@@ -1,0 +1,15 @@
+.nameh1, .nameh2{
+    font-family: "Dmsans", sans-serif;
+    color : var(--secondary_text_h2);
+}
+
+.nameh1{
+    font-size: 64px;
+    line-height: 83px;
+    font-weight: normal;
+}
+
+.nameh2{
+    font-size: 36px;
+    line-height: 47px;
+}

@@ -109,3 +109,4 @@ package.json
 scss/
 css/style.css.map
 webpack.config.js
+.babelrc

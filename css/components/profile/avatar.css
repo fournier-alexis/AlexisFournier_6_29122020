@@ -1,0 +1,13 @@
+.portrait{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.size-1x{
+    width: 100px;
+    height: 100px;
+}
+.size-2x{
+    width: 200px;
+    height: 200px;
+}

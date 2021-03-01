@@ -3,42 +3,25 @@
     flex-direction: column;
     align-items: center;
     width: 350px;
-    height: 310px;
+    height: 330px;
     font-family: "DMSans", sans-serif;
     font-style: normal;
     font-weight: 400;
     text-align: center;
+    transition: transform 200ms ease;
+}
+
+.thumbPhotographer:hover {
+    cursor: pointer;
+    transform: scale(1.02);
 }
 
 .thumbPhotographer a{
     text-decoration: none;
 }
 
-.thumbPhotographer img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-}
 .thumbPhotographer h2, .thumbPhotographer .location, .thumbPhotographer .tagline, .thumbPhotographer .price{
     margin: 2px 0;
-}
-.thumbPhotographer h2{
-    font-size: 36px;
-    line-height: 47px;
-    color : var(--secondary_text_h2);
-}
-
-.thumbPhotographer .location{
-    font-size: 13px;
-    line-height: 17px;
-    color : var(--secondary_text_p);
-}
-
-.thumbPhotographer .tagline{
-    font-size: 10px;
-    line-height: 13px;
-    color : var(--color_black);
 }
 
 .thumbPhotographer .price{
@@ -49,5 +32,18 @@
 
 .thumbPhotographer .tags{
     display: flex;
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+    .thumbPhotographer{
+        margin-bottom: 3em;
+    }
+}
+
+@media (max-width: 768px) {
+
 }
 
