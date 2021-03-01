@@ -1,4 +1,4 @@
-/**Class representing a point */
+/**Class representing a tag */
 export default class Tag {
     /**
      * Create a tag
