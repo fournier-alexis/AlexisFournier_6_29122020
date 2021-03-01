@@ -6,23 +6,70 @@
     <link rel="icon" type="image/png" href="../src/icon.ico">
     <link href="../css/photographer-page.css" rel="stylesheet" type="text/css">
     <link href="../css/variables.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet" type="text/css">
     <script src="../dist/app.bundle.js" defer></script>
 </head>
-<body>
+<body id="photographer">
     <header id="header">
-        <img id="logo" src="../src/logo.svg" alt="Logo de Fisheye">
+        <img id="logo" src="../src/logo.svg" alt="Logo de Fisheye" tabindex="1" accesskey="1">
     </header>
     <main id="main">
         <div id="profile">
 
         </div>
         <!--ProfileHeader -->
-        <label for="sort">Trier par</label>
-        <select id="sort" >
+        <label id="label" for="sort">Trier par</label>
+        <select id="sort" tabindex="1">
             <option value="popular" selected>Popularité</option>
             <option value="date">Date</option>
             <option value="title">Titre</option>
         </select>
+        <div id="lightbox">
+            <div class="content">
+                <div id="left-nav-button">
+                    <i id="left" class="fas fa-angle-left" role="button"></i>
+                </div>
+                <div id="lightbox-media">
+                    <img id="lightbox-image" src="" alt="">
+                    <video id="lightbox-video" controls>
+                        <source id="lightbox-source" type="video/mp4" src="">
+                    </video>
+                    <p id="lightbox-title"></p>
+                </div>
+                <div id="right-nav-button">
+                    <i id="close" class="fas fa-times" role="button"></i>
+                    <i id="right" class="fas fa-angle-right" role="button"></i>
+                </div>
+            </div>
+        </div>
+        <div id="contact-modal">
+            <form id="form" action="">
+                <div>
+                    <h1>Contactez-moi</h1>
+                    <i id="contact-close" class="fas fa-times" tabindex="1" role="button"></i>
+                </div>
+                <div id="photographer-name">
+
+                </div>
+                <label for="name">Prénom</label>
+                <input id="name" type="text" tabindex="1" aria-required="true">
+                <span id="errorName"></span>
+
+                <label for="lastname">Nom</label>
+                <input id="lastname" type="text" tabindex="1" aria-required="true">
+                <span id="errorLastname"></span>
+
+                <label for="email">Email</label>
+                <input id="email" type="text" tabindex="1" aria-required="true">
+                <span id="errorEmail"></span>
+
+                <label for="message">Votre message</label>
+                <textarea id="message" tabindex="1" aria-required="true"></textarea>
+                <span id="errorMessage"></span>
+
+                <button id="button" tabindex="1">Envoyer</button>
+            </form>
+        </div>
     </main>
 </body>
 </html>
