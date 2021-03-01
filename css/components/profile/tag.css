@@ -9,7 +9,6 @@
     font-size: 12px;
     line-height: 16px;
     color: var(--secondary_text_p);
-    outline: none;
     transition: all 500ms;
 }
 
@@ -17,4 +16,10 @@
     cursor: pointer;
     color: var(--color_white);
     background-color: var(--secondary_text_p);
+}
+
+@media (max-width: 768px) {
+    .tag{
+        margin-bottom: 0.5em;
+    }
 }
