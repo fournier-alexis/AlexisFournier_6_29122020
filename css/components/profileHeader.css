@@ -1,6 +1,10 @@
-body header img {
+#photographer header img {
     width: 25%;
-    margin-left: 7em;
+    margin-left: 1.5%;
+}
+
+#photographer header img:hover {
+    cursor: pointer;
 }
 
 .profile{
@@ -20,15 +24,16 @@ body header img {
     color: var(--color_white);
     background-color: var(--secondary_text_p);
     border: none;
-    outline: none;
     border-radius: 5px;
     padding: 13px 5px;
-    transition: transform 200ms ease;
+    transition: all 200ms ease;
 }
 
 .contact:hover{
     cursor: pointer;
     transform: scale(1.05);
+    background-color: var(--primary-light);
+    color: var(--primary-text);
 }
 
 .presentation{
@@ -58,4 +63,36 @@ body header img {
 
 .profile .portrait{
     margin-top: 4.5em;
+}
+
+@media (max-width: 1100px) {
+    .contact{
+        position: fixed;
+        margin: 0 35%;
+        top: 90%;
+        z-index: 1;
+    }
+}
+
+@media (max-width: 991px) {
+    #photographer header img {
+        width: 40%;
+        margin-left: -1%;
+    }
+}
+
+@media (max-width: 768px) {
+    #photographer header img {
+        width: 50%;
+        margin-left: -5%;
+    }
+    #main #profile{
+        margin-left: 1em;
+    }
+    #main #profile img{
+        margin-right: 1.5em;
+    }
+    #main #profile .tagline{
+        line-height: 1rem;
+    }
 }

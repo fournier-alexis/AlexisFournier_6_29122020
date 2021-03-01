@@ -8,3 +8,14 @@
     display: flex;
     justify-content: space-around;
 }
+
+@media (max-width: 1100px) {
+    .listMedias, .ligneMedias{
+        flex-direction: column;
+        justify-content: unset;
+        align-items: center;
+    }
+    .listMedias{
+        margin-top: 2em;
+    }
+}

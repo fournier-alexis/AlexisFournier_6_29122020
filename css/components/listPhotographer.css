@@ -2,9 +2,21 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    margin-top: 2em;
 }
 
 .listPhotographer .lignePhotographer{
     display: flex;
     justify-content: space-around;
+}
+
+@media (max-width: 992px) {
+    .listPhotographer, .lignePhotographer{
+        flex-direction: column;
+        justify-content: unset;
+        align-items: center;
+    }
+    .listPhotographer{
+        margin-top: 2em;
+    }
 }

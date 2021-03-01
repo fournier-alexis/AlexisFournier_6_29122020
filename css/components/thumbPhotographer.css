@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 350px;
-    height: 310px;
+    height: 330px;
     font-family: "DMSans", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -32,5 +32,18 @@
 
 .thumbPhotographer .tags{
     display: flex;
+}
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+    .thumbPhotographer{
+        margin-bottom: 3em;
+    }
+}
+
+@media (max-width: 768px) {
+
 }
 
