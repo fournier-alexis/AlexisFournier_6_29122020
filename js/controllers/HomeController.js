@@ -1,6 +1,5 @@
 import ListPhotographers from "../components/ListPhotographers";
 import Controller from "./Controller";
-import PhotographerController from "./PhotographerController";
 
 export default class HomeController{
     constructor() {
@@ -9,6 +8,7 @@ export default class HomeController{
 
     registerListeners(){
         document.getElementById("logo").addEventListener("click", this.goHome);
+        document.getElementById("logo").addEventListener("keydown", this.goHome);
         document.getElementById("up").addEventListener("click", this.toTheTop);
         document.querySelectorAll(".tag").forEach((tag) => {
             tag.addEventListener("click", this.selectTag);
@@ -16,10 +16,15 @@ export default class HomeController{
         document.querySelectorAll(".thumbPhotographer").forEach((photographer) => {
             photographer.addEventListener("click", (evt)=>{this.selectPhotographer(evt, photographer)});
         });
+        document.querySelectorAll(".thumbPhotographer").forEach((photographer) => {
+            photographer.addEventListener("keydown", (evt)=>{this.selectPhotographer(evt, photographer)});
+        });
     }
 
-    goHome(){
-        window.location.href = "./index.html";
+    goHome(event){
+        if (Controller.isValidInput(event)){
+            window.location.href = "./index.html";
+        }
     }
 
     /**
@@ -31,14 +36,16 @@ export default class HomeController{
 
     selectTag(evt){
         const tag = (evt.target.firstChild.data).substring(1);
-        document.getElementById("main").innerHTML = "";
-        document.getElementById("main").appendChild(new ListPhotographers( JSON.parse(sessionStorage.getItem("listPhotographer"))).createElement(tag));
+        document.getElementById("section").innerHTML = "";
+        document.getElementById("section").appendChild(new ListPhotographers( JSON.parse(sessionStorage.getItem("listPhotographer"))).createElement(tag));
         new HomeController();
     }
 
-    selectPhotographer(evt, photographer){
-        window.location.href = "./html/photographer-page.html";
-        sessionStorage.setItem("photographerNameSelected", photographer.dataset.name);
+    selectPhotographer(event, photographer){
+        if (Controller.isValidInput(event)){
+            window.location.href = "./html/photographer-page.html";
+            sessionStorage.setItem("photographerNameSelected", photographer.dataset.name);
+        }
     }
 }
 
