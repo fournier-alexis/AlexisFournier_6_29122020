@@ -1,0 +1,15 @@
+.statistics{
+    display: flex;
+}
+
+.statistics .price{
+    margin-right: 1em;
+}
+
+.statistics .likes:after{
+    font-family: "Font Awesome 5 Free", serif;
+    font-weight: 900;
+    font-size: 22px;
+    margin-left:0.2em;
+    content: "\f004";
+}
