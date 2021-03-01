@@ -21,7 +21,7 @@ export default class ContactController {
 
     /**
      * Enregistre les évènements de la modale
-     * @return void
+     * @return {void}
      */
     registerListeners() {
         document.getElementById("name").addEventListener("change", this.checkEmpty.bind(this, "errorName"));
@@ -35,6 +35,11 @@ export default class ContactController {
         });
     }
 
+    /**
+     * re
+     *
+     * @return {void}
+     */
     removeListeners() {
         document.getElementById("name").removeEventListener("change", this.checkEmpty);
         document.getElementById("lastname").removeEventListener("change", this.checkEmpty);
@@ -48,6 +53,7 @@ export default class ContactController {
 
     /**
      * Ouvre la modale de contact
+     * return {void}
      */
     openModal() {
         const modal = document.getElementById("contact-modal");
@@ -70,6 +76,7 @@ export default class ContactController {
      * Vérifie si le champs est vide
      * @param error {string}
      * @param event
+     * @return {void}
      */
     checkEmpty(error, event) {
         this.errors[error] = event.target.value.length <= 0;
@@ -84,6 +91,7 @@ export default class ContactController {
     /**
      * Vérifie si le mail est valide
      * @param event
+     * @return {void}
      */
     checkMail(event) {
         this.errors["errorEmail"] = !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(event.target.value);
@@ -98,6 +106,7 @@ export default class ContactController {
      * Affiche et supprime les messages d'erreurs
      * @param error {string}
      * @param isVisible {boolean}
+     * @return {void}
      */
     displayError(error, isVisible) {
         if (isVisible) {
@@ -109,6 +118,7 @@ export default class ContactController {
 
     /**
      * Envoie le message
+     * @return {void}
      */
     sendMessage() {
         let formIsValid = true;

@@ -1,8 +1,16 @@
 import Tag from "../metier/Tag";
 
+/**
+ * Represent the global controller
+ */
 export default class Controller{
     static listTag = [];
 
+    /**
+     * Add a tag to the list if it don't exist
+     * @param tags
+     * @return {void}
+     */
     static addTags(tags) {
         tags.forEach(tag => {
             const label = tag;
@@ -13,6 +21,11 @@ export default class Controller{
         });
     }
 
+    /**
+     * Check if a tag is already added to the list
+     * @param label
+     * @returns {boolean}
+     */
     static tagContains(label) {
         let found = false;
         this.listTag.forEach(t => {
@@ -23,6 +36,11 @@ export default class Controller{
         return found;
     }
 
+    /**
+     * Return a photographer by his name
+     * @param name
+     * @returns {Photographer}
+     */
     static getPhotographerByName(name) {
         let photographer = null;
         JSON.parse(sessionStorage.getItem("listPhotographer")).forEach(p => {
@@ -33,6 +51,12 @@ export default class Controller{
         return photographer;
     }
 
+    /**
+     * Get all medias from a photographer
+     * The array is sorted in case of the user's choice
+     * @param id
+     * @returns {Media[]}
+     */
     static getMediaByPhotographerId(id){
         let medias = [];
         JSON.parse(sessionStorage.getItem("listMedia")).forEach(m => {
@@ -58,13 +82,19 @@ export default class Controller{
         return medias;
     }
 
+    /**
+     * Return a the media by his path
+     * @param photographerId
+     * @param path
+     * @returns {Media}
+     */
     static getMediaByPath(photographerId, path){
         const index = this.getIndexOfMedia(photographerId, path);
         return this.getMediaOfIndex(photographerId, index);
     }
 
     /**
-     *
+     * Return the index of a media
      * @param photographerId
      * @param media
      * @returns {number}
@@ -80,6 +110,12 @@ export default class Controller{
         return index;
     }
 
+    /**
+     *
+     * @param photographerId
+     * @param index
+     * @returns {Media}
+     */
     static getMediaOfIndex(photographerId, index) {
         return this.getMediaByPhotographerId(photographerId)[index];
     }
@@ -100,7 +136,7 @@ export default class Controller{
     /**
      * Change l'opacité de la page "photographer-page"
      * @param opacity : string
-     * @return void
+     * @return {void}
      */
     static setBackgroundOpacity(opacity) {
         const header = document.getElementById("header");
@@ -122,6 +158,11 @@ export default class Controller{
         })
     }
 
+    /**
+     * Return true if user press enter or clickQ
+     * @param event
+     * @returns {boolean}
+     */
     static isValidInput(event) {
         let isValidInput = false;
 

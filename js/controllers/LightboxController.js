@@ -1,7 +1,14 @@
 import Controller from "./Controller";
 
+/**
+ * Represent the controller of the lightbox
+ */
 export default class LightboxController {
 
+    /**
+     *
+     * @param photographer
+     */
     constructor(photographer) {
         this._photographer = photographer;
 
@@ -9,12 +16,18 @@ export default class LightboxController {
         LightboxController._instance = this;
     }
 
+    /**
+     * Register all listeners
+     */
     registerListeners() {
         document.getElementById("left").addEventListener("click", this.switchMediaTo.bind(this, "left"));
         document.getElementById("right").addEventListener("click", this.switchMediaTo.bind(this, "right"));
         document.getElementById("close").addEventListener("click", this.closeLightbox.bind(this));
     }
 
+    /**
+     * Remove all listeners
+     */
     removeListeners() {
         document.getElementById("left").removeEventListener("click", this.switchMediaTo);
         document.getElementById("right").removeEventListener("click", this.switchMediaTo);
@@ -49,6 +62,7 @@ export default class LightboxController {
     /**
      * Récupère le prochain média à afficher
      * @param direction : string
+     * @return {void}
      */
     switchMediaTo(direction) {
         const media = document.getElementById("lightbox").dataset.media;
@@ -71,7 +85,7 @@ export default class LightboxController {
      * Change le media de la lightbox
      * @param media : string => le nom du média
      * @param type : "image"|"video"
-     * @return void
+     * @return {void}
      */
     changeLightboxMedia(media, type) {
         const lightbox = document.getElementById("lightbox");
@@ -101,6 +115,7 @@ export default class LightboxController {
     /**
      * Affiche le titre du media
      * @param path : string
+     * @return {void}
      */
     displayMediaTitle(path) {
         const lightboxTitle = document.getElementById("lightbox-title");
@@ -112,7 +127,7 @@ export default class LightboxController {
      * Définit la position des flèches
      * Définit si on affiche ou non les flèches
      * @param media : string
-     * @return void
+     * @return {void}
      */
     displayArrows(media) {
         const index = Controller.getIndexOfMedia(this._photographer.id, media);

@@ -4,8 +4,15 @@ import LightboxController from "./LightboxController";
 import ContactController from "./ContactController";
 import MobileController from "./MobileController";
 
+/**
+ * Reprensent the controller for photographers pages
+ */
 export default class PhotographerController {
 
+    /**
+     * @param photographer
+     * @return {void}
+     */
     constructor(photographer) {
         this._photographer = photographer;
         this.registerListeners(false);
@@ -45,12 +52,22 @@ export default class PhotographerController {
         }
     }
 
+    /**
+     * Go to index.html
+     * @param event
+     * @return {void}
+     */
     goToMainPage(event) {
         if (Controller.isValidInput(event)) {
             window.location = "../index.html";
         }
     }
 
+    /**
+     * Sort medias in case of the filter
+     * @param e
+     * return {void}
+     */
     sortMedias(e) {
         localStorage.setItem("currentFilter", e.target.value);
         const main = document.getElementById("main");
@@ -62,7 +79,7 @@ export default class PhotographerController {
     }
 
     /**
-     * Ouvre la lightbox à partir du media choisi
+     * Open the lightbox
      * @param event
      * @param media
      * @return void
@@ -74,10 +91,19 @@ export default class PhotographerController {
         }
     }
 
+    /**
+     * Open the contact modal
+     * @return {void}
+     */
     openModal() {
         new ContactController().openModal();
     }
 
+    /**
+     * control the lightbox with keys
+     * @param event
+     * @return {void}
+     */
     onKeyDown(event) {
         if (document.getElementById("lightbox").style.display === "block") {
             const lightboxController = new LightboxController(this._photographer);
