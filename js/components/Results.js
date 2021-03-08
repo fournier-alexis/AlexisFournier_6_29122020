@@ -20,7 +20,7 @@ export default class Results{
         divResults.className = "results";
 
         const likes = document.createElement('p');
-        likes.className = "likes";
+        likes.className = "totalLikes";
         likes.textContent = Controller.getPhotographerLikes(this._photographer.id);
 
         const dailyPrice = document.createElement('p');

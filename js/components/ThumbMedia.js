@@ -24,14 +24,12 @@ export default class ThumbMedia{
      */
     createElement() {
         const media = document.createElement('div');
-        media.className = "media";
+        media.className = "thumbMedia";
 
         if (this._media.image){
-            media.dataset.mediaPath = this._media.image;
             media.appendChild(new Image(this._name, this._media).createElement());
         }
         else if(this._media.video){
-            media.dataset.mediaPath = this._media.video;
             media.appendChild(new Video(this._name, this._media).createElement());
         }
 
@@ -49,7 +47,7 @@ export default class ThumbMedia{
         description.className = "description";
 
         const title = new Title(this._media.description).createElement();
-        const statistics = new Statistics(this._media.price, this._media.likes.toString()).createElement();
+        const statistics = new Statistics(this._media.id, this._media.price, this._media.likes.toString()).createElement();
 
         description.appendChild(title);
         description.appendChild(statistics);

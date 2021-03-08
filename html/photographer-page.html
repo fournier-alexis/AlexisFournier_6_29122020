@@ -18,12 +18,15 @@
 
         </div>
         <!--ProfileHeader -->
-        <label id="label" for="sort">Trier par</label>
-        <select id="sort" tabindex="1">
-            <option value="popular" selected>Popularité</option>
-            <option value="date">Date</option>
-            <option value="title">Titre</option>
-        </select>
+        <div id="sort-container">
+            <label id="label" for="sort">Trier par</label>
+            <button id="sort" tabindex="1">Popularité</button>
+            <div id="elements">
+                <p class="sortBtn" data-value="popular" tabindex="1">Popularité</p>
+                <p class="sortBtn" data-value="date" tabindex="1">Date</p>
+                <p class="sortBtn" data-value="title" tabindex="1">Titre</p>
+            </div>
+        </div>
         <div id="lightbox">
             <div class="content">
                 <div id="left-nav-button">

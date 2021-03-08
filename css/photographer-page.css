@@ -13,19 +13,67 @@
     font-size: 18px;
 }
 
+#sort-container{
+    position: relative;
+    margin-top: 2em;
+}
+
 #sort{
     width: 170px;
-    margin-top: 2em;
     color: var(--color_white);
     background-color: var(--secondary_text_p);
     font-weight: 700;
     font-size: 18px;
     line-height: 23px;
-    appearance: none;
+    border-radius: 5px;
+    border: none;
+    padding: 0.25em 0;
 }
 
-#sort option:hover{
+#sort:hover{
+    cursor: pointer;
     background-color: var(--secondary_text_h2);
+}
+
+#elements{
+    display: none;
+    position: absolute;
+    width: 170px;
+    text-align: center;
+    left: 157px;
+    top: 0;
+    z-index: 1;
+}
+
+#elements p{
+    font-family: "DMSans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+    padding: 0.5em 0;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    color: white;
+    background-color: var(--secondary_text_p);
+}
+
+#elements p:hover, #elements p:focus{
+    background-color: var(--secondary_text_h2);
+    cursor: pointer;
+}
+
+#elements p:first-child{
+    border-radius: 5px 5px 0 0;
+}
+
+#elements p:first-child:after, #sort:after{
+    font-family: "Font Awesome 5 Free", serif;
+    margin-left: 0.5em;
+    content: "\f077";
+}
+
+#elements p:last-child{
+    border-radius: 0 0 5px 5px;
 }
 
 #lightbox, #contact-modal{

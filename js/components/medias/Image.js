@@ -22,8 +22,9 @@ export default class Image{
 
         image.src = "../src/photographers/" + this._name + "/Content/" + this._media.image;
         image.alt = this._media.description;
-        image.className = "image";
+        image.className = "media image";
         image.tabIndex = 1;
+        image.dataset.mediaPath = this._media.image;
         image.setAttribute("role", "button");
         image.setAttribute("aria-labelledby",labelBy + "-label");
 

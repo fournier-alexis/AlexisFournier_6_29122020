@@ -35,6 +35,7 @@ export default class HomeController{
      */
     refresh(event){
         if (Controller.isValidInput(event)){
+            sessionStorage.setItem("selectedTag", "");
             window.location.href = "./index.html";
         }
     }

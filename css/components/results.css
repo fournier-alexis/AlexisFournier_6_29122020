@@ -1,7 +1,7 @@
 .results{
     position: fixed;
     display: flex;
-    top: 90%;
+    top: 94%;
     right: 1%;
     background-color: var(--primary-light);
     width: 25%;

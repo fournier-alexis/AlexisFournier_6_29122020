@@ -4,10 +4,12 @@ import "./../../../css/components/medias/statistics.css";
 export default class Statistics{
     /**
      * Create statistics
+     * @param id {number}
      * @param price {number}
      * @param likes {string}
      */
-    constructor(price, likes){
+    constructor(id, price, likes){
+        this._id = id;
         this._price = price;
         this._likes = likes
     }
@@ -24,9 +26,13 @@ export default class Statistics{
         price.className= "price";
         price.textContent = this._price + "€";
 
+        const isLiked = sessionStorage.getItem(this._id.toString()) !== "null";
         const likes = document.createElement('p');
-        likes.className = "likes";
-        likes.textContent = this._likes;
+        likes.className = isLiked ? "likes liked" : "likes";
+        likes.tabIndex = 1;
+        likes.dataset.initial = this._likes;
+        likes.dataset.id = this._id.toString();
+        likes.textContent = isLiked ? parseInt(this._likes) + 1 : this._likes;
 
         statistics.appendChild(price);
         statistics.appendChild(likes);

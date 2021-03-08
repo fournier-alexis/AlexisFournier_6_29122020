@@ -29,7 +29,9 @@ if (document.title !== ""){
 
         //Load elements
         document.getElementById("header").appendChild(new Filter().createElement());
-        document.getElementById("section").appendChild(new ListPhotographers( JSON.parse(sessionStorage.getItem("listPhotographer"))).createElement());
+        document.getElementById("section").appendChild(new ListPhotographers(
+            JSON.parse(sessionStorage.getItem("listPhotographer")))
+            .createElement(sessionStorage.getItem("selectedTag")));
 
         //Load controllers
         new HomeController();

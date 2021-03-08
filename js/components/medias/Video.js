@@ -23,9 +23,10 @@ export default class Video{
 
         source.type = "video/mp4";
         source.src = "../src/photographers/" + this._name + "/Content/" + this._media.video;
-        video.className = "video";
+        video.className = "media video";
         video.controls = true;
         video.tabIndex = 1;
+        video.dataset.mediaPath = this._media.video;
         video.setAttribute("role", "button");
         video.setAttribute("aria-labelledby",labelBy + "-label");
         video.appendChild(source);
